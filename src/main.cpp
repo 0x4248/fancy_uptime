@@ -1,8 +1,8 @@
 // Fancy uptime for linux systems
-
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <cstring>
 #include <sstream>
 #include <vector>
 #include <algorithm>
@@ -13,12 +13,49 @@
 #include "./lib/colour.h"
 
 using namespace std;
-
+#define VERSION "1.0.0"
 int main(int argc, char *argv[])
 {
     ascii_colours::normal normal;
     ascii_colours::bold bold;
-
+    for(int i = 1; i < argc; i++)
+    {
+        if(strcmp(argv[i], "-h") == 0 || strcmp(argv[i], "--help") == 0)
+        {
+            cout << bold.green << "Fancy uptime for linux systems" << bold.reset << endl;
+            cout << bold.green << "Usage: " << bold.reset << "uptime [OPTION]" << endl;
+            cout << bold.green << "Options:" << bold.reset << endl;
+            cout << bold.green << "  -h, --help" << bold.reset << "     Show this help" << endl;
+            cout << bold.green << "  -v, --version" << bold.reset << "  Show version" << endl;
+            cout << bold.green << "  -nc, --no-colour" << bold.reset << "  No colour" << endl;
+            return 0;
+        }
+        else if(strcmp(argv[i], "-v") == 0 || strcmp(argv[i], "--version") == 0)
+        {
+            cout << bold.green << "Fancy uptime for linux systems" << bold.reset << endl;
+            cout << bold.green << "Version: " << bold.reset << VERSION << endl;
+            return 0;
+        }
+        else if(strcmp(argv[i], "-nc") == 0 || strcmp(argv[i], "--no-colour") == 0)
+        {
+            normal.reset = "";
+            bold.reset = "";
+            normal.red = "";
+            normal.green = "";
+            normal.yellow = "";
+            normal.blue = "";
+            normal.magenta = "";
+            normal.cyan = "";
+            normal.white = "";
+            bold.red = "";
+            bold.green = "";
+            bold.yellow = "";
+            bold.blue = "";
+            bold.magenta = "";
+            bold.cyan = "";
+            bold.white = "";
+        }
+    }
     string uptime = "";
     FILE *in;
     char buff[512];
@@ -128,12 +165,5 @@ int main(int argc, char *argv[])
     {
         uptime.replace(uptime.find(" 9"), 2, "9");
     }
-    uptime.erase(uptime.find_last_not_of("\n")+1);
-    uptime.erase(uptime.find_last_not_of(" ")+1);
-    ofstream myfile;
-    myfile.open("uptime.txt");
-    myfile << uptime;
-    myfile.close();
-
     cout << uptime << endl;
 }
