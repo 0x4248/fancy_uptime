@@ -7,11 +7,11 @@ COMPILER = g++
 STD = c++17
 OUTPUT = fuptime
 SRC = src/main.cpp
-
+LIB = lib
 all: compile run 
 
 compile:
-	$(COMPILER) $(SRC) -std=$(STD) -o $(OUTPUT) 
+	$(COMPILER) $(SRC) -std=$(STD) -o $(OUTPUT) -I $(LIB)
 
 run:
 	./$(OUTPUT) -a
