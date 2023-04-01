@@ -3,18 +3,28 @@
 # Made by: awesomelewis2007
 # Github: https://www.github.com/awesomelewis2007/fancy_uptime
 # License: GNU General Public License v3.0
+
 COMPILER = g++
 STD = c++17
-OUTPUT = fuptime
+
 SRC = src/main.cpp
 LIB = lib
-all: compile run 
 
-compile:
-	$(COMPILER) $(SRC) -std=$(STD) -o $(OUTPUT) -I $(LIB)
+OUTPUT = fuptime
+BIN = bin
 
-run:
-	./$(OUTPUT) -a
+all: init $(OUTPUT)
+
+init:
+	@echo "MKDIR $(BIN)"
+	@mkdir -p $(BIN)
+
+$(OUTPUT): $(SRC)
+	@echo "CC $<"
+	@$(COMPILER) -std=$(STD) -I$(LIB) $< -o $(BIN)/$@
 
 clean:
-	rm  -f $(OUTPUT)
+	@echo "RM $(BIN)"
+	@rm -rf $(BIN)
+
+.PHONY: clean
