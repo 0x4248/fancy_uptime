@@ -1,7 +1,7 @@
 # Fancy uptime make file
 # A fancy uptime reader that makes a nicer output than the uptime command. 
 # Github: https://www.github.com/awesomelewis2007/fancy_uptime
-# License: GPL-3.0
+# Licence: GPL-3.0
 # By: Lewis Evans
 
 COMPILER = g++
