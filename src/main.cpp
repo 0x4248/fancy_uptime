@@ -30,6 +30,7 @@ ascii_colours::bold bold;
  * @return: the formatted uptime string
  */
 std::string format_uptime(std::string uptime) {
+    /* replace the "up" with "The system has been up for:" */
     uptime.replace(uptime.find("up"), 2,
                    bold.green + "The system has been up for:" + bold.reset +
                        "\n");
@@ -124,6 +125,7 @@ std::string format_uptime(std::string uptime) {
 
 int main(int argc, char *argv[]) {
     for (int i = 1; i < argc; i++) {
+        /* check for help */
         if (strcmp(argv[i], "-h") == 0 || strcmp(argv[i], "--help") == 0) {
             cout << bold.green << "Fancy uptime for linux systems" << bold.reset
                  << endl;
@@ -138,12 +140,14 @@ int main(int argc, char *argv[]) {
                  << "  No colour" << endl;
             return 0;
         } else if (strcmp(argv[i], "-v") == 0 ||
+            /* check for version */
                    strcmp(argv[i], "--version") == 0) {
             cout << bold.green << "Fancy uptime for linux systems" << bold.reset
                  << endl;
             cout << bold.green << "Version: " << bold.reset << VERSION << endl;
             return 0;
         } else if (strcmp(argv[i], "-nc") == 0 ||
+        /* check for no colour */
                    strcmp(argv[i], "--no-colour") == 0) {
             normal.reset = "";
             bold.reset = "";
@@ -167,9 +171,11 @@ int main(int argc, char *argv[]) {
     FILE *in;
     char buff[512];
     if (!(in = popen("uptime -p", "r"))) {
+        /* If we can't open the command then return 1 */
         return 1;
     }
     while (fgets(buff, sizeof(buff), in) != NULL) {
+        /* Read the output of the command */
         uptime += buff;
     }
     pclose(in);
