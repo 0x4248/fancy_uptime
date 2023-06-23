@@ -140,14 +140,14 @@ int main(int argc, char *argv[]) {
                  << "  No colour" << endl;
             return 0;
         } else if (strcmp(argv[i], "-v") == 0 ||
-            /* check for version */
+                   /* check for version */
                    strcmp(argv[i], "--version") == 0) {
             cout << bold.green << "Fancy uptime for linux systems" << bold.reset
                  << endl;
             cout << bold.green << "Version: " << bold.reset << VERSION << endl;
             return 0;
         } else if (strcmp(argv[i], "-nc") == 0 ||
-        /* check for no colour */
+                   /* check for no colour */
                    strcmp(argv[i], "--no-colour") == 0) {
             normal.reset = "";
             bold.reset = "";
