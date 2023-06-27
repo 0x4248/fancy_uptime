@@ -1,8 +1,8 @@
 # !#/bin/bash
 # Fancy uptime make file
 # A fancy uptime reader that makes a nicer output than the uptime command. 
-# Made by: awesomelewis2007
-# Github: https://www.github.com/awesomelewis2007/fancy_uptime
+# Made by: lewisevans2007
+# Github: https://www.github.com/lewisevans2007/fancy_uptime
 # Licence: GNU General Public License v3.0
 if [ "$EUID" -ne 0 ]
   then echo -e "\e[31mPlease run as root\e[0m"

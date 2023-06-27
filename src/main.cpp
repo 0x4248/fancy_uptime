@@ -1,6 +1,6 @@
 /* Fancy uptime (main.c)
  * A fancy uptime reader that makes a nicer output than the uptime command.
- * Github: https://www.github.com/awesomelewis2007/fancy_uptime
+ * Github: https://www.github.com/lewisevans2007/fancy_uptime
  * Licence: GNU General Public License v3.0
  * By: Lewis Evans
  */
