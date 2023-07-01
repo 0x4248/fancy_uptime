@@ -2,7 +2,7 @@
     "name": "fancy_uptime",
     "description": "A fancy uptime reader that makes a nicer output than the uptime command.",
     "version": "",
-    "main_file": "none",
+    "main_file": "src/main.cpp",
     "author": "Lewis Evans",
     "license": "GNU General Public License v3.0",
     "url": "https://www.github.com/lewisevans2007/fancy_uptime",
