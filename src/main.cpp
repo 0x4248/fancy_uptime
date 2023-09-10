@@ -18,8 +18,9 @@
 
 #include "colour.h"
 
-using namespace std;
 #define VERSION "1.0.0"
+
+using namespace std;
 
 ascii_colours::normal normal;
 ascii_colours::bold bold;
