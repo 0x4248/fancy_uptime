@@ -7,7 +7,8 @@
 COMPILER = g++
 STD = c++17
 
-SRC = src/main.cpp
+SRC = src
+MAIN = main.cpp
 LIB = lib
 
 OUTPUT = fuptime
@@ -19,7 +20,7 @@ init:
 	@echo "MKDIR $(BIN)"
 	@mkdir -p $(BIN)
 
-$(OUTPUT): $(SRC)
+$(OUTPUT): $(SRC)/$(MAIN)
 	@echo "CC $<"
 	@$(COMPILER) -std=$(STD) -I$(LIB) $< -o $(BIN)/$@
 
