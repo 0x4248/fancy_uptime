@@ -13,10 +13,12 @@ fuptime
 ```bash
 sudo apt install gcc make
 ```
+
 ### Build using make
 ```bash
 make compile
 ```
+
 ### Manual build
 ```bash
 gcc -o fuptime fuptime.c
