@@ -33,8 +33,13 @@ mv fuptime scripts/fuptime
 cd scripts
 sudo bash install_fuptime.sh
 ```
+
 ## Uninstallation
 ```bash
 cd scripts
 sudo bash uninstall_fuptime.sh
 ```
+
+## Licence
+
+This project is licenced under the GNU General Public Licence v3.0. See the [LICENCE](LICENCE) file for more details.
