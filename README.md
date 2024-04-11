@@ -26,7 +26,7 @@ gcc -o fuptime fuptime.c
 
 ## Installation
 ```bash
-git clone https://www.github.com/lewisevans2007/fancy_uptime
+git clone https://www.github.com/0x4248/fancy_uptime
 cd fancy_uptime
 make
 mv fuptime scripts/fuptime
